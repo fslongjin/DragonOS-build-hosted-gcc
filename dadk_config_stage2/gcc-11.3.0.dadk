@@ -1,0 +1,24 @@
+{
+  "name": "gcc-libstdc++",
+  "version": "11.3.0",
+  "description": "构建gcc-libstdc++",
+  "task_type": {
+    "BuildFromSource": {
+      "Local": {
+        "path": "gcc"
+      }
+    }
+  },
+  "depends": [
+  ],
+  "build": {
+    "build_command": "bash build-hosted-stage2.sh"
+  },
+  "install": {
+    "in_dragonos_path": "/"
+  },
+  "clean": {
+    "clean_command": "make clean"
+  },
+  "envs": []
+}

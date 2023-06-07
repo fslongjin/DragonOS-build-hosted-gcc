@@ -1,0 +1,28 @@
+{
+  "name": "gcc",
+  "version": "11.3.0",
+  "description": "构建gcc",
+  "task_type": {
+    "BuildFromSource": {
+      "Local": {
+        "path": "gcc"
+      }
+    }
+  },
+  "depends": [
+    {
+      "name": "binutils",
+      "version": "2.38"
+    }
+  ],
+  "build": {
+    "build_command": "bash build-hosted-stage1.sh"
+  },
+  "install": {
+    "in_dragonos_path": "/"
+  },
+  "clean": {
+    "clean_command": "make clean"
+  },
+  "envs": []
+}
