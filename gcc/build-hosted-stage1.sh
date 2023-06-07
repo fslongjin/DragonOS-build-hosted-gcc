@@ -6,11 +6,11 @@
 
 # 编译前请先设置参数
 sys_root=$DRAGONOS_SYSROOT
-gcc_path=./gcc
+CURRENT_DIR=$(pwd)
+gcc_path=${CURRENT_DIR}/gcc
 
 # 要安装到的目录
 PREFIX=$HOME/opt/dragonos-host-userspace
-CURRENT_DIR=$(pwd)
 
 if [ ! -d ${gcc_path} ]; then
     echo "INFO: ${gcc_path} not found, cloning DragonOS-gcc..."
@@ -50,3 +50,6 @@ ${gcc_path}/configure --prefix=${PREFIX} --target=x86_64-dragonos --with-sysroot
 make all-gcc all-target-libgcc -j $(nproc) || exit 1
 make install-gcc install-target-libgcc -j $(nproc)  || exit 1
 
+# 如果没有检测到x86_64-dragonos-gcc，需要往bashrc里添加环境变量
+echo "export PATH=$HOME/opt/dragonos-host-userspace/bin:$PATH" >> ~/.bashrc
+source ~/.bashrc

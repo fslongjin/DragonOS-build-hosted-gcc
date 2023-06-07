@@ -1,11 +1,11 @@
 # 编译前请先设置参数
 sys_root=$DRAGONOS_SYSROOT
-binutils_path=./binutils
+CURRENT_DIR=$(pwd)
+binutils_path=${CURRENT_DIR}/binutils
 
 # 要安装到的目录
 PREFIX=$HOME/opt/dragonos-host-userspace
 
-CURRENT_DIR=$(pwd)
 
 if [ ! -d ${sys_root} ]; then
     echo "Error: ${sys_root} not found"

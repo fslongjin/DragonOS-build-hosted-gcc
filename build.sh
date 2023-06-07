@@ -19,7 +19,10 @@ stage2(){
 }
 
 stage0 || exit 1
+source ~/.bashrc
 stage1 || exit 1
+source ~/.bashrc
 stage2 || exit 1
+source ~/.bashrc
 
 

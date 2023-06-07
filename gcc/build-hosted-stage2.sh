@@ -6,11 +6,12 @@
 
 # 编译前请先设置参数
 sys_root=$DRAGONOS_SYSROOT
-gcc_path=/home/longjin/code/gcc
-
+CURRENT_DIR=$(pwd)
+gcc_path=${CURRENT_DIR}/gcc
 # 要安装到的目录
 PREFIX=$HOME/opt/dragonos-host-userspace
 
+source ~/.bashrc
 
 if [ ! -d ${gcc_path} ]; then
     echo "Error: ${gcc_path} not found"
